@@ -1,9 +1,9 @@
 === EMC2 Popup Disclaimer ===
 Contributors: emcniece
 Donate link: http://emc2innovation.com
-Tags: video, help, dashboard, client, developer
+Tags: disclaimer, popup, warning, terms, agreement, notify
 Requires at least: 3.0.0
-Tested up to: 3.3.1
+Tested up to: 3.3.2
 Stable tag: 1.0
 
 EMC2 Popup Disclaimer places a specified post into a lightbox and adds buttons so that your visitors must click through to agree to your terms!
