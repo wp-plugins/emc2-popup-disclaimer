@@ -17,6 +17,8 @@ Shortcode: [?php [emc2pdc] ?]
  -or-
 Function:  [?php emc2pdc_force(); ?]
 
+Check the demo at http://popup.emc2innovation.com !
+
 To Do list:
 
 *   Add No-JS fallback support
