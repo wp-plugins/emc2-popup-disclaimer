@@ -30,6 +30,11 @@ function emc2pdc_help_admin() {
 
 	// Begin Output!
 	echo '<h1>EMC2 Popup Disclaimer</h1><h2><em style="color:#666;">Settings Page</em></h2><br />';
+	echo '<div id="iframe"><h4>It would mean a lot to me if you could rate this plugin!</h4>
+	<iframe src="http://wordpress.org/extend/plugins/emc2-popup-disclaimer#plugin-title" frameborder="1" width="auto" height="200" scrolling="auto">
+		<a href="http://wordpress.org/extend/plugins/emc2-popup-disclaimer" target="_blank">http://wordpress.org/extend/plugins/emc2-popup-disclaimer</a>
+	</iframe></div>';
+
 	// display plugin options
 
 ?>
@@ -41,25 +46,25 @@ function emc2pdc_help_admin() {
 
 
         <fieldset>
-            <label for="nid">Page or post nid to display in popup:</label>
+            <label class="block" for="nid">Page or post nid to display in popup:</label>
             <input type="text" name="nid" width="30" value="<?php echo $settings['nid']; ?>" />
 			<a class="button" onclick="findPosts.open('action','find_posts');return false;" href="#"><?php esc_attr_e('Post Search'); ?></a>
 
 		</fieldset>
         <fieldset>
-            <label for="cexpire">Number of days to hold cookies for (0 to disable):</label>
+            <label class="medium" for="cexpire">Number of days to hold cookies for (0 to disable):</label>
             <input type="text" name="cexpire" width="30" value="<?php echo $settings['cexpire']; ?>" />
 		</fieldset>
         <fieldset>
-            <label for="accept_text">'Accept' button text:</label>
+            <label class="medium" for="accept_text">'Accept' button text:</label>
             <input type="text" name="accept_text" width="50" value="<?php echo $settings['accept_text']; ?>" />
 		</fieldset>
         <fieldset>
-            <label for="decline_text">'Decline' button text:</label>
+            <label class="medium" for="decline_text">'Decline' button text:</label>
             <input type="text" name="decline_text" width="50" value="<?php echo $settings['decline_text']; ?>" />
 		</fieldset>
         <fieldset>
-            <label for="redirect_url">'Decline' redirection url:</label>
+            <label class="medium" for="redirect_url">'Decline' redirection url:</label>
             <input type="text" name="redirect_url" width="50" value="<?php echo $settings['redirect_url']; ?>" />
 		</fieldset>
         
@@ -92,9 +97,45 @@ function emc2pdc_footer_admin () {
     
 
 
+/* ****************************************************************
+**
+**	function emc2pdc_shortcode( $atts)
+**
+**	Removes default footer action and adds a force argument 
+**	to the new action. jQuery then picks up on the force
+**	and displays the popup box regardless of cookie state.
+**
+**	This function can also be used to force the disclaimer popup.
+**
+**************************************************************** */
+add_shortcode('emc2pdc', 'emc2pdc_force');
+function emc2pdc_force( $atts=array() ){
+	extract(shortcode_atts(array(
+	      'force' => '0',
+     ), $atts));
+
+		remove_action('wp_footer', 'emc2pdc_disclaimer');
+		add_action('emc2pdc_footer', 'emc2pdc_disclaimer', 10, 2 );
+		do_action('emc2pdc_footer', $atts, $force=3);
+
+} // emc2pdc_shortcode;
 
 
-function emc2pdc_disclaimer() {
+
+/* ****************************************************************
+**
+**	function emc2pdc_disclaimer( $atts, $force)
+**
+**	Working output of popup variables and content. Called from 
+**	emc2-popup-disclaimer.php as well. 
+**
+**************************************************************** */
+
+function emc2pdc_disclaimer( $atts, $force=NULL) {
+	extract(shortcode_atts(array(
+	      //'force' => '0',
+     ), $atts));
+
 
 	$settings = unserialize(get_option('emc2pdc_settings'));	
 	if( !wp_script_is('jquery') ) wp_enqueue_script('jquery', plugin_dir_url(__FILE__) . 'fancybox/jquery-1.4.3.min.js' );
@@ -109,7 +150,10 @@ function emc2pdc_disclaimer() {
 	foreach($settings as $name => $setting){
 		echo '<div id="'.$name.'">'.$setting.'</div>';
 	} // foreach $settings 
-	echo '</div>';
+	
+	if($force){ echo '<div id="force">1</div>'; }
+	
+	echo '</div>'; // #emc2pdc-vars
 
 	echo '<div id="emc2pdc-trigger"></div>';
 	echo '<div id="emc2pdc-disc-wrap"><div id="emc2pdc-disclaimer">';
@@ -119,10 +163,4 @@ function emc2pdc_disclaimer() {
 	echo '<p class="linkwraps"><a class="fancybox agree" href="#">'.$settings['accept_text'].'</a> <a class="fancybox disagree" href="'.$settings['redirect_url'].'">'.$settings['decline_text'].'</a></p>';
 	
 	echo '</div></div>';
-	
-
-
-
-
-	
 }

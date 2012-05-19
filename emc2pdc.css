@@ -63,3 +63,10 @@
 	text-decoration: none;
 	font: bold 12px/25px Arial, sans-serif;
 }
+#emc2pdc_form .block{ display:block; }
+#emc2pdc_form .medium{ width:200px; display:inline-block;}
+
+.settings_page_emc2-popup-disclaimer-emc2pdc-admin #iframe{ float:right; margin-right:20px;}
+.settings_page_emc2-popup-disclaimer-emc2pdc-admin #iframe iframe{
+	box-shadow:0 0 6px #555;	
+}

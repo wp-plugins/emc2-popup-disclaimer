@@ -5,9 +5,12 @@ $j(window).load(function(){
 	
 	// Set cookie expiry, default 1 day
 	var cexpire = parseInt( $j('#emc2pdc-vars').children('#cexpire').text() );
+	var force = parseInt( $j('#emc2pdc-vars').children('#force').text() );
+	console.log( force );
 	if(!cexpire){ cexpire = 1; }
 
-	if( $j.cookie('emc2pdc') == 'agreed'){
+	// If force argument is set, display box regardless of cookie state
+	if( ($j.cookie('emc2pdc') == 'agreed') && (!force) ){
 		// they've already agreed to the disclaimer!	
 	} else {
 		// display disclaimer!
@@ -22,7 +25,7 @@ $j(window).load(function(){
 			'transitionIn': 'fade',
 			'transitionOut': 'fade',
 			'content': $j('#emc2pdc-disc-wrap').html(),
-			'onComplete': function(){Cufon.refresh(); }
+			'onComplete': function(){ }
 	
 		}).trigger('click');
 	} // display disclaimer
