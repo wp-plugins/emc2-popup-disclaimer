@@ -68,9 +68,6 @@ If you want to jump the gun, make me a temporary user (with that email up there)
 
 == Changelog ==
 
-= 1.0 =
-* Helloooooo World.
-
 = 1.1 =
 * Fixed post display selection input
 * Added screenshots
@@ -78,5 +75,9 @@ If you want to jump the gun, make me a temporary user (with that email up there)
 * Admin styles
 * Shortcode support
 * Function call support
+
+= 1.0 =
+* Helloooooo World.
+
 
 
