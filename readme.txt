@@ -74,4 +74,7 @@ If you want to jump the gun, make me a temporary user (with that email up there)
 * Added screenshots
 * Set up demo site: http://popup.emc2innovation.com
 * Admin styles
+* Shortcode support
+* Function call support
+
 
