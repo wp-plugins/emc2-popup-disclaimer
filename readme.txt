@@ -11,11 +11,11 @@ EMC2 Popup Disclaimer places a specified post into a lightbox and adds buttons s
 == Description ==
 
 EMC2 Popup Disclaimer uses Fancybox (http://fancybox.net) to display the popup, and jQuery-cookie (https://github.com/carhartl/jquery-cookie) to detect user session. Creates a cookie named "emc2pdc" that can be viewed with regular developer tools.
-
-Easy to use! By default the script is added to the wp_footer action and will work quietly. You can also force the display on pages via shortcode or function call:
-Shortcode: `[emc2pdc]`
- -or-
-Function:  `<?php emc2pdc_force(); ?>`
+  
+Easy to use! By default the script is added to the wp_footer action and will work quietly. You can also force the display on pages via shortcode or function call:  
+Shortcode: `[emc2pdc]`  
+ -or-  
+Function:  `<?php emc2pdc_force(); ?>`  
 
 Check the demo at http://popup.emc2innovation.com !
 
