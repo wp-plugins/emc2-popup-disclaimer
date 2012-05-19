@@ -53,8 +53,8 @@ The settings page is straightforward except for perhaps the "Restrict operation 
 
 = My Cufon styles aren't showing in the popup =
 
-You can add your own callback function for the Fancybox call in /wp-content/plugins/emc2-popup-disclaimer/js/emc2pdc.js in the .fancybox() call:
-[?php 'onComplete': function(){ Cufon.refresh(); } ?]
+You can add your own callback function for the Fancybox call in /wp-content/plugins/emc2-popup-disclaimer/js/emc2pdc.js in the .fancybox() call:  
+`'onComplete': function(){ Cufon.refresh(); }`
 
 = Are you available for help? =
 I might be able to help you - it totally depends on my schedule and workload. Send me an email! hello@emc2innovation.com. You could also post here on the forums.
