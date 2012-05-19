@@ -42,7 +42,7 @@ function emc2pdc_help_admin() {
 
         <fieldset>
             <label for="nid">Page or post nid to display in popup:</label>
-            <input type="text" name="nid" width="30" value="<?php echo $settings['found_post_id']; ?>" />
+            <input type="text" name="nid" width="30" value="<?php echo $settings['nid']; ?>" />
 			<a class="button" onclick="findPosts.open('action','find_posts');return false;" href="#"><?php esc_attr_e('Post Search'); ?></a>
 
 		</fieldset>
@@ -113,7 +113,7 @@ function emc2pdc_disclaimer() {
 
 	echo '<div id="emc2pdc-trigger"></div>';
 	echo '<div id="emc2pdc-disc-wrap"><div id="emc2pdc-disclaimer">';
-	$text = wp_get_single_post($settings['found_post_id']);
+	$text = wp_get_single_post($settings['nid']);
 	echo apply_filters('the_content', $text->post_content);
 	
 	echo '<p class="linkwraps"><a class="fancybox agree" href="#">'.$settings['accept_text'].'</a> <a class="fancybox disagree" href="'.$settings['redirect_url'].'">'.$settings['decline_text'].'</a></p>';
