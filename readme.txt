@@ -4,24 +4,25 @@ Donate link: http://emc2innovation.com
 Tags: disclaimer, popup, warning, terms, agreement, notify
 Requires at least: 3.0.0
 Tested up to: 3.3.2
-Stable tag: 1.0
+Stable tag: 1.1
 
 EMC2 Popup Disclaimer places a specified post into a lightbox and adds buttons so that your visitors must click through to agree to your terms!
 
 == Description ==
 
-
 EMC2 Popup Disclaimer uses Fancybox (http://fancybox.net) to display the popup, and jQuery-cookie (https://github.com/carhartl/jquery-cookie) to detect user session. Creates a cookie named "emc2pdc" that can be viewed with regular developer tools.
+
+Easy to use! By default the script is added to the wp_footer action and will work quietly. You can also force the display on pages via shortcode or function call:
+Shortcode: [?php [emc2pdc] ?]
+ -or-
+Function:  [?php emc2pdc_force(); ?]
 
 To Do list:
 
 *   Add No-JS fallback support
 *   Create a selection of button themes
 *   Add support for different lightbox types
-*   Better post-grabber dialog
-*   Shortcode support
-*   Function call support
-*   Demo website
+*   Improve handling, add PHP cookie support
 
 Known bugs:
 
@@ -48,17 +49,29 @@ The settings page is straightforward except for perhaps the "Restrict operation 
 
 == Frequently Asked Questions ==
 
-= I'm having trouble =
+= My Cufon styles aren't showing in the popup =
 
-Send me an email! hello@emc2innovation.com. You could also post here on the forums.
+You can add your own callback function for the Fancybox call in /wp-content/plugins/emc2-popup-disclaimer/js/emc2pdc.js in the .fancybox() call:
+[?php 'onComplete': function(){ Cufon.refresh(); } ?]
+
+= Are you available for help? =
+I might be able to help you - it totally depends on my schedule and workload. Send me an email! hello@emc2innovation.com. You could also post here on the forums.
+
+If you want to jump the gun, make me a temporary user (with that email up there) and I will be more inclined to give you a hand. In return for my help, all I ask for is a rating! :)
 
 == Screenshots ==
 
-1. Dashboard view with themed widget.
-2. Settings page with demo server and first video expanded. 
+1. Dashboard view with settings.
+2. Initial page view with popup display. 
 
 == Changelog ==
 
 = 1.0 =
 * Helloooooo World.
+
+= 1.1 =
+* Fixed post display selection input
+* Added screenshots
+* Set up demo site: http://popup.emc2innovation.com
+* Admin styles
 
