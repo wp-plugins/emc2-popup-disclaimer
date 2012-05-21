@@ -6,7 +6,9 @@ $j(window).load(function(){
 	// Set cookie expiry, default 1 day
 	var cexpire = parseInt( $j('#emc2pdc-vars').children('#cexpire').text() );
 	var force = parseInt( $j('#emc2pdc-vars').children('#force').text() );
-	console.log( force );
+	var debug = $j('#emc2pdc-vars').children('#debug_mode').text();
+	
+	if(debug.length) console.log( 'Popup Disclaimer debug mode active!' );
 	if(!cexpire){ cexpire = 1; }
 
 	// If force argument is set, display box regardless of cookie state
