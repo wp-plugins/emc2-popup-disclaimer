@@ -44,12 +44,14 @@ Installation is straighforward:
 EMC2 Popup Disclaimer will work straight out of the box. There's a few options available from within WordPress, and future releases will feature themeable options.
 
 Settings can be found in these locations:
+
 *   /wp-admin/options-general.php?page=emc2-popup-disclaimer/emc2pdc-admin.php (Default settings)
 *   /wp-content/plugins/emc2-popup-disclaimer/js/emc2pdc.js (Fancybox, jQuery-cookie settings)
 
 The settings page is straightforward except for perhaps the "Restrict operation to directory:" setting. This is the operational directory of the jQuery cookie plugin - default is '/', which is your entire site. To specify operation for a certain directory, type it here like '/store'. More jQuery-cookie settings can be found at https://github.com/carhartl/jquery-cookie.  
   
 Things of note:
+
 *    Specify post ID using shortcode is optional – if blank, it will use ID# from settings
 *    Shortcode / function call will override wp_footer action
 *    Debug mode will output visible settings on every included page
