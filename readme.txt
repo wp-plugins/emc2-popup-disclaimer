@@ -50,10 +50,10 @@ Settings can be found in these locations:
 The settings page is straightforward except for perhaps the "Restrict operation to directory:" setting. This is the operational directory of the jQuery cookie plugin - default is '/', which is your entire site. To specify operation for a certain directory, type it here like '/store'. More jQuery-cookie settings can be found at https://github.com/carhartl/jquery-cookie.  
   
 Things of note:
-* Specify post ID using shortcode is optional – if blank, it will use ID# from settings
-* Shortcode / function call will override wp_footer action
-* Debug mode will output visible settings on every included page
-* Setting an ID equal to the page you’re calling from results in mass chaos! If you set the shortcode [ emc2pdc id="10" ] on post ID 10 it seems to freak out a bit.
+*    Specify post ID using shortcode is optional – if blank, it will use ID# from settings
+*    Shortcode / function call will override wp_footer action
+*    Debug mode will output visible settings on every included page
+*    Setting an ID equal to the page you’re calling from results in mass chaos! If you set the shortcode [ emc2pdc id="10" ] on post ID 10 it seems to freak out a bit.
 
 == Frequently Asked Questions ==
 
