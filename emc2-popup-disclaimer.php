@@ -3,7 +3,7 @@
 Plugin Name: EMC2 Popup Disclaimer 
 Plugin URI: http://emc2innovation.com/
 Description: Adds a popup Disclaimer for users
-Version: 1.0
+Version: 1.2
 Author: Eric McNiece
 Author URI: http://emc2innovation.com
 License: GPL
@@ -27,6 +27,8 @@ function emc2pdc_install () {
 		'accept_text' => 'Accept',
 		'decline_text' => 'Decline',
 		'redirect_url' => 'http://google.ca',
+		'shortcode_only' => NULL,
+		'debug_mode' => NULL,
 	));
 	
 	update_option('emc2pdc_settings', $settings);
@@ -48,7 +50,9 @@ function emc2pdc_functions()
 	$settings = unserialize(get_option('emc2pdc_settings'));
 
 	// Add popup disclaimer to footer
-	add_action('wp_footer', 'emc2pdc_disclaimer');
+	if(!$settings['shortcode_only']){
+		add_action('wp_footer', 'emc2pdc_disclaimer');
+	}
 
 }
 

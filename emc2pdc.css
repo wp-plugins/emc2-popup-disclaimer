@@ -53,7 +53,10 @@
 	background: linear-gradient(top,  #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827',GradientType=0 ); /* IE6-9 */
 }
-
+#emc2pdc_form{
+	float:left;
+	width:50%;	
+}
 #emc2pdc_form .button {
 	display: inline-block;
 	position: relative;
@@ -66,7 +69,12 @@
 #emc2pdc_form .block{ display:block; }
 #emc2pdc_form .medium{ width:200px; display:inline-block;}
 
-.settings_page_emc2-popup-disclaimer-emc2pdc-admin #iframe{ float:right; margin-right:20px;}
+.settings_page_emc2-popup-disclaimer-emc2pdc-admin #iframe{ 
+	float:right;
+	width:50%;
+}
 .settings_page_emc2-popup-disclaimer-emc2pdc-admin #iframe iframe{
 	box-shadow:0 0 6px #555;	
+	width:98%;
 }
+#emc2pdc_form input[type="text"]{ width:190px; }
