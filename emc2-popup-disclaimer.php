@@ -3,7 +3,7 @@
 Plugin Name: EMC2 Popup Disclaimer 
 Plugin URI: http://emc2innovation.com/
 Description: Adds a popup Disclaimer for users
-Version: 1.2
+Version: 1.2.1
 Author: Eric McNiece
 Author URI: http://emc2innovation.com
 License: GPL
