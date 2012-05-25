@@ -155,7 +155,7 @@ function emc2pdc_disclaimer( $atts, $force=NULL, $id=NULL) {
 	if( !wp_script_is('jquery') ) wp_enqueue_script('jquery', plugin_dir_url(__FILE__) . 'fancybox/jquery-1.4.3.min.js' );
 	if( !wp_script_is('easing') ) wp_enqueue_script('easing', plugin_dir_url(__FILE__) . 'fancybox/fancybox/jquery.easing-1.3.pack.js', array('jquery') );
 	if( !wp_script_is('fancybox') ) wp_enqueue_script('fancybox', plugin_dir_url(__FILE__) . 'fancybox/fancybox/jquery.fancybox-1.3.4.pack.js', array('jquery') );
-	if( !wp_script_is('cookie') ) wp_enqueue_script('cookie', plugin_dir_url(__FILE__) . 'js/jquery.cookie.js', array('jquery') );
+	if( !wp_script_is('cookie') ) wp_enqueue_script('cookie', plugin_dir_url(__FILE__) . 'js/jquery_cke.js', array('jquery') );
 	if( !wp_style_is('fancybox-css') ) wp_enqueue_style('fancybox-css', plugin_dir_url(__FILE__) . 'fancybox/fancybox/jquery.fancybox-1.3.4.css' );
 	if( !wp_script_is('emc2pdc') ) wp_enqueue_script('emc2pdc_js', plugin_dir_url(__FILE__) . '/js/emc2pdc.js', array('fancybox') );
 
